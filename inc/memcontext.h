@@ -1,21 +1,21 @@
 /*
-* MemContextExample - Memory Context draw example for QNX4.25/Photon
+* PtMemContextExample - Memory Context draw example for QNX4.25/Photon
 * Copyright (C) 2020 Roman Serov <roman@serov.co>
 *
-* This file is part of MemContextExample for QNX4.25/Photon.
+* This file is part of PtMemContextExample for QNX4.25/Photon.
 * 
-* MemContextExample for QNX4.25/Photon is free software: you can redistribute it and/or modify
+* PtMemContextExample for QNX4.25/Photon is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
 * (at your option) any later version.
 * 
-* MemContextExample for QNX4.25/Photon is distributed in the hope that it will be useful,
+* PtMemContextExample for QNX4.25/Photon is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU General Public License for more details.
 * 
 * You should have received a copy of the GNU General Public License
-* along with MemContextExample for QNX4.25/Photon. If not, see <http://www.gnu.org/licenses/>.
+* along with PtMemContextExample for QNX4.25/Photon. If not, see <http://www.gnu.org/licenses/>.
 */
 
 #ifndef MEMCTX_H

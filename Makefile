@@ -11,7 +11,7 @@ OBJS = $(SRCS:.cpp=.o)
 CC = cc
 INCLUDEDIRS += ./inc
 
-LIBS = photon
+LIBS = photon_s
 LIBS += /qnx4/phtk/lib/phrender_s.lib /qnx4/phtk/lib/phexlib3r.lib
 
 CFLAGS = -Oentx -ms -s -w1 -5r, -WC,-xss \
