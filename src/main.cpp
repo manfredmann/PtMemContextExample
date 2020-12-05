@@ -25,7 +25,13 @@
 int main() {
     MemContextExample &mem_ctx = MemContextExample::get_instance();
 
-    mem_ctx.run();
+    try {
+        mem_ctx.run();
+    } catch (TimerException &e) {
+        printf("%s\n", e.what_c());
+    } catch (MemContextException &e) {
+        printf("%s\n", e.what_c());        
+    }
 
     return 0;
 }

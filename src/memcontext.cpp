@@ -26,14 +26,16 @@ MemContextExample::MemContextExample() {
     mc          = NULL;
     buf_draw    = NULL;
     timer       = NULL;
-
+    is_attached = 0;
 // ============================
 
     PhChannelParms_t    parms       = {0, 0, Ph_DYNAMIC_BUFFER};
 
     if (!PhAttach(NULL, &parms)) {
-        printf("Couldn't attach to Photon manager\n");
+        return;
     }
+
+    is_attached = 1;
 
     PtInit(NULL);
     PgSetDrawBufferSize(0xFFFF);
@@ -138,6 +140,10 @@ MemContextExample::~MemContextExample() {
 }
 
 void MemContextExample::run() {
+    if (is_attached == 0) {
+        throw MemContextException("Couldn't attach to Photon manager");
+    }
+
     draw();
     
     PtMainLoop();

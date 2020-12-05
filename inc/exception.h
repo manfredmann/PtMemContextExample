@@ -33,13 +33,12 @@ class BaseException {
         }
 
         BaseException(const char *fmt, va_list args) {
-            char *buffer = new char[1024];
+            memset(buffer, 0x0, 1024);
 
             _vbprintf(buffer, 1024, fmt, args);
 
             this->msg = String(buffer);
 
-            delete[] buffer;
         }
 
         String what() {
@@ -52,6 +51,7 @@ class BaseException {
 
     private:
         String  msg;
+        char    buffer[1024];
         va_list args_;
 };
 

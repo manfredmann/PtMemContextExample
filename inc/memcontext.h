@@ -29,6 +29,8 @@
 #include <photon/PhRender.h>
 #include <photon/PtLabel.h>
 
+#include <String.h>
+
 #include "timer.h"
 #include "yalabel.h"
 
@@ -38,6 +40,17 @@ typedef enum {
     DIR_UP_LEFT,
     DIR_UP_RIGHT,
 } direction_t;
+
+class MemContextException : public BaseException {
+    public:
+        MemContextException(String msg) : BaseException(msg) { } 
+        MemContextException(const char *fmt, ...) : BaseException(fmt, (va_start(args_, fmt), args_)) {
+            va_end(args_);
+        }
+
+    private:
+        va_list args_;
+};
 
 class MemContextExample {
     public:
@@ -55,6 +68,8 @@ class MemContextExample {
 
     private:
         MemContextExample();
+
+        int                 is_attached;
 
         PtWidget_t *        window;
         PtWidget_t *        label;
